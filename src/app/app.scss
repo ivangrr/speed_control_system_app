@@ -15,7 +15,25 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+@font-face {
+    font-family: DS-DIGII;
+    src: url(../assets/fonts/DS-DIGII.ttf) format("truetype");
+}
+
+.toolbar-md-primary .toolbar-background-md {
+    background: black;
+}
+
 .tabs-md-primary .tabbar {
     // background-color: #488aff;
     background-color: black;
+}
+
+.speed {
+    font-family: DS-DIGII, sans-serif;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
 }

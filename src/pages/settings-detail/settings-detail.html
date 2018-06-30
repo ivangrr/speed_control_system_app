@@ -1,0 +1,34 @@
+<!--
+  Generated template for the SettingsDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar [color]="'primary'">
+    <ion-title>{{ item.title }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="measureUnitsGroup">
+    <ion-list radio-group formControlName="measureUnit">
+    
+      <ion-item>
+        <ion-label>Km/h</ion-label>
+        <ion-radio (click)="setMeasureUnit()" value="Km/h"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>mph</ion-label>
+        <ion-radio (click)="setMeasureUnit()" value="mph"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>mps (meters/sec)</ion-label>
+        <ion-radio (click)="setMeasureUnit()" value="mps"></ion-radio>
+      </ion-item>
+
+    </ion-list>
+  </form>
+</ion-content>
