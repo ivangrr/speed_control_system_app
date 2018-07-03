@@ -17,29 +17,32 @@ import { Globalvariables } from '../../providers/globalvariables/globalvariables
 })
 export class SettingsPage {
   items = [];
-  isAndroid: boolean = false;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public platform: Platform,
-              public globalVariables: Globalvariables) {
-    // this.isAndroid = platform.is('android');              
-  }
+              public globalVariables: Globalvariables) { }
 
   ionViewDidEnter(){
     this.items = [
       {
+        'id': 'measure-unit',
         'title': 'Measure Units',
         'icon': 'alarm',
         'description': 'Measure Units.',
+        'color': '#BAB6B6'
+      },
+      {
+        'id': 'mode',
+        'title': 'Mode',
+        'icon': 'switch',
+        'description': 'Mode',
         'color': '#BAB6B6'
       }
     ];
   }
 
-  ionViewDidLoad() {
-    // console.log('ionViewDidLoad SettingsPage');
-  }
+  ionViewDidLoad() { }
 
   openNavDetailsPage(item){
     this.navCtrl.push(SettingsDetailPage, { item: item });

@@ -18,23 +18,36 @@ import { Globalvariables } from '../../providers/globalvariables/globalvariables
 export class SettingsDetailPage {
   item;
   measureUnitsGroup: FormGroup;
+  modeGroup: FormGroup;
  
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private formBuilder: FormBuilder,
               public globalVariable: Globalvariables) {
     this.item = navParams.data.item;
-    this.measureUnitsGroup = this.formBuilder.group({
-      'measureUnit': [globalVariable.getMeasureUnit()]
-    });
+    
+    // Measure Unit Setting Detail Section
+    if(this.item.id == 'measure-unit'){
+      this.measureUnitsGroup = this.formBuilder.group({
+        'measureUnit': [globalVariable.getMeasureUnit()]
+      });
+    }
+    // Mode Setting Detail Section
+    if(this.item.id == 'mode'){
+      this.modeGroup = this.formBuilder.group({
+        'mode': [globalVariable.getMode()]
+      });
+    }
   }
 
-  ionViewDidLoad() {
-  }
+  ionViewDidLoad() { }
 
   setMeasureUnit(){
     this.globalVariable.setMeasureUnit(this.measureUnitsGroup.value.measureUnit);
-  }  
-
+  }
+  
+  setMode(){
+    this.globalVariable.setMode(this.modeGroup.value.mode);
+  }
 
 }

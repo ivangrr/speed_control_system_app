@@ -11,24 +11,43 @@
 </ion-header>
 
 <ion-content padding>
-  <form [formGroup]="measureUnitsGroup">
-    <ion-list radio-group formControlName="measureUnit">
-    
-      <ion-item>
-        <ion-label>Km/h</ion-label>
-        <ion-radio (click)="setMeasureUnit()" value="Km/h"></ion-radio>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>mph</ion-label>
-        <ion-radio (click)="setMeasureUnit()" value="mph"></ion-radio>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>mps (meters/sec)</ion-label>
-        <ion-radio (click)="setMeasureUnit()" value="mps"></ion-radio>
-      </ion-item>
+  <div *ngIf="item.id == 'measure-unit'">
+    <form [formGroup]="measureUnitsGroup">
+      <ion-list radio-group formControlName="measureUnit">
+      
+        <ion-item>
+          <ion-label>Km/h</ion-label>
+          <ion-radio (click)="setMeasureUnit()" value="Km/h"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>mph</ion-label>
+          <ion-radio (click)="setMeasureUnit()" value="mph"></ion-radio>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>mps (meters/sec)</ion-label>
+          <ion-radio (click)="setMeasureUnit()" value="mps"></ion-radio>
+        </ion-item>
 
-    </ion-list>
-  </form>
+      </ion-list>
+    </form>
+  </div>
+  <div *ngIf="item.id == 'mode'">
+    <form [formGroup]="modeGroup">
+      <ion-list radio-group formControlName="mode">
+      
+        <ion-item>
+          <ion-label>Real</ion-label>
+          <ion-radio (click)="setMode()" value="real"></ion-radio>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label>Test</ion-label>
+          <ion-radio (click)="setMode()" value="test"></ion-radio>
+        </ion-item>
+  
+      </ion-list>
+    </form>
+  </div>
 </ion-content>

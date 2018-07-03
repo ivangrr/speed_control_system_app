@@ -13,4 +13,24 @@
 
 <ion-content padding>
   <div class="speed">{{speed}} {{measureUnit}}</div>
+  <div *ngIf="!isDriving">
+    <ion-list>
+      <div padding>
+        <button ion-button color="dark" icon-start full (click)="startDriving()">
+          <ion-icon name="car"></ion-icon>
+          Driving
+        </button>
+      </div>
+    </ion-list>
+  </div>
+  <div *ngIf="isDriving">
+    <ion-list>
+      <div padding>
+        <button ion-button color="dark" icon-start full (click)="stopDriving()">
+          <ion-icon name="car"></ion-icon>
+          Stop Driving
+        </button>
+      </div>
+    </ion-list>
+  </div>
 </ion-content>
